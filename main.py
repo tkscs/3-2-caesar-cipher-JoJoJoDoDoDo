@@ -25,10 +25,21 @@ plaintext = "This is a secret message."
 
 # Initialize your ciphertext an empty string
 ciphertext = ""
+ciphertext2 = " "
 for character in plaintext:
-    # do something to the character to encrypt it
-    # YOUR CODE HERE
-    encrypted_character = "a" # CHANGE THIS!
+    encrypted_character = ord(character)
+    encrypted_character += 1
+    encrypted_character = chr(encrypted_character)
+
     ciphertext += encrypted_character
 
+    if character in "aeiou":
+        encrypted_character = "*"
+    else:
+        encrypted_character = character
+
+
+    ciphertext2 += encrypted_character
+
 print(f"{ciphertext = }")
+print(f"{ciphertext2 = }")
